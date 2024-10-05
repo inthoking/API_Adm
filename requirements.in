@@ -3,6 +3,7 @@ fastapi
 mariadb
 passlib
 pydantic
+pymysql
 python-dotenv
 sqlalchemy
 uvicorn[standard]

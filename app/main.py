@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 from app.api import user, master, password
 from app.database import Base, engine
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 Base.metadata.create_all(bind=engine)
 

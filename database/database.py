@@ -1,6 +1,8 @@
 import mariadb
 import sys
 
+DATABASE_URL = "mysql+mariadb://Admin:2929@localhost:3306/admi_pass"
+
 def get_db_connection():
     try:
         conn = mariadb.connect(

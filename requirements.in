@@ -1,6 +1,8 @@
-fastapi
-uvicorn[standard]
-sqlalchemy
-mariadb
-python-dotenv
 cryptography
+fastapi
+mariadb
+passlib
+pydantic
+python-dotenv
+sqlalchemy
+uvicorn[standard]

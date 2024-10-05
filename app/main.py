@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from app.api import user, master, password
-from key.encrypt import read_key_iv_pem, encrypt_data, decrypt_data
 from app.database import Base, engine
 
 Base.metadata.create_all(bind=engine)

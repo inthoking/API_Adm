@@ -34,10 +34,14 @@ mariadb==1.1.10
     # via -r requirements.in
 packaging==24.1
     # via mariadb
+passlib==1.7.4
+    # via -r requirements.in
 pycparser==2.22
     # via cffi
 pydantic==2.9.2
-    # via fastapi
+    # via
+    #   -r requirements.in
+    #   fastapi
 pydantic-core==2.23.4
     # via pydantic
 python-dotenv==1.0.1

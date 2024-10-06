@@ -10,7 +10,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     return pwd_context.verify(plain_password, hashed_password)
 
-# Función para hashear contraseñas usando bcrypt
+# Función para hashear o encriptar como se quieras decir contraseñas usando bcrypt
 def get_password_hash(password: str) -> str:
     return pwd_context.hash(password)
 
@@ -39,6 +39,7 @@ def decrypt_data(data_encrypted: bytes, key: bytes, iv: bytes) -> bytes:
     unpadder = padding.PKCS7(128).unpadder()
     return unpadder.update(datos_padded) + unpadder.finalize()
 
+#TEGNO QEU AGREGAR EL ENCRIPTADO ASIMETRICO 
 # Ejemplo de uso
 # key, iv, salt = read_key_iv_pem('secrets/key_iv.pem')
 # data = b"Datos secretos que quiero cifrar"

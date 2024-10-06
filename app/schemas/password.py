@@ -6,7 +6,7 @@ class PassBase(BaseModel):
 class PassCreate(PassBase):
     pass
 
-class Pass(PassBase):
+class PassRead(PassBase):
     Pass_id: int
     Master_pass_id: int
     User_id: int

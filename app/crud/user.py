@@ -1,13 +1,18 @@
 from sqlalchemy.orm import Session
 from app.models.user import User
 from app.schemas.user import UserCreate
+from app.schemas.user import UserRead
 
 # Crear un nuevo usuario
 def create_user(db: Session, user: UserCreate):
+    print("Entró acá")
     db_user = User(nickname=user.User_name, name=user.Name, lastName=user.Last_name, email=user.Email_add)
+    print("usuario creado")
     db.add(db_user)
+    print("usuario añadido")
     db.commit()
     db.refresh(db_user)
+    db_user = UserRead(User_id=db_user.id, User_name=db_user.nickname, Name= db_user.name, Last_name=db_user.lastName, Email_add=db_user.email)
     return db_user
 
 # Obtener usuario por ID

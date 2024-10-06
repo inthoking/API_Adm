@@ -6,7 +6,7 @@ class MasterBase(BaseModel):
 class MasterCreate(MasterBase):
     pass
 
-class Master(MasterBase):
+class MasterRead(MasterBase):
     Master_pass_id: int
     User_id: int
 

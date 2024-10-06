@@ -9,7 +9,7 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
     pass
 
-class User(UserBase):
+class UserRead(UserBase):
     User_id: int
 
     class Config:

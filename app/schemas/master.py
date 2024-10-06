@@ -12,3 +12,6 @@ class MasterRead(MasterBase):
 
     class Config:
         from_attributes = True
+
+
+#funciones del DTO

@@ -8,7 +8,7 @@ from app.schemas.user import UserCreate, UserRead
 
 router = APIRouter()
 
-@router.post("/", response_model=UserRead)
+@router.post("/", response_model=UserRead) #averiguar response model
 def create_new_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = create_user(db=db, user=user)
     userdto = UserRead.model_validate(db_user)

@@ -12,6 +12,7 @@ def create_user(db: Session, user: UserCreate):
     print("usuario añadido")
     db.commit()
     db.refresh(db_user)
+    db_user = UserRead(User_id=db_user.id, User_name=db_user.nickname, Name= db_user.name, Last_name=db_user.lastName, Email_add=db_user.email)
     return db_user
 
 # Obtener usuario por ID

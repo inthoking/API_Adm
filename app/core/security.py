@@ -1,18 +1,18 @@
-from passlib.context import CryptContext
+import bcrypt
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 from cryptography.hazmat.backends import default_backend
 
-# Crear un contexto de criptografía con bcrypt
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 # Función para verificar contraseñas usando bcrypt
-def verify_password(plain_password: str, hashed_password: str) -> bool:
-    return pwd_context.verify(plain_password, hashed_password)
+def verify_password(password: str, hashed_password: str) -> bool:
+    return bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
 
 # Función para hashear o encriptar como se quieras decir contraseñas usando bcrypt
-def get_password_hash(password: str) -> str:
-    return pwd_context.hash(password)
+def hash_password(password: str) -> str:
+    salt = bcrypt.gensalt()  # Genera un nuevo salt
+    hashed = bcrypt.hashpw(password.encode('utf-8'), salt)  # Hashea la contraseña
+    return hashed.decode('utf-8')
 
 # Leer la clave y el IV desde un archivo .PEM
 def read_key_iv_pem(filename: str):

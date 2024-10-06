@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 class MasterBase(BaseModel):
-    Master_pass: bytes
+    Master_pass: str
 
 class MasterCreate(MasterBase):
     pass
